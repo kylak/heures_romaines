@@ -6,13 +6,23 @@ public class algo {
 
 	public static void main 
 	(String[] args) {
-		int dr = Integer.parseInt(args[1]);
-		float lv = Float.parseFloat(args[0]);
+		int dr = n_ntr(args[1]);
+		float lv = n_dcml(args[0]);
 		float mnts =  dr / 12.F;
 		int[][][] h = id_hr(mnts, lv);
 		int[]dr_hr = dcp_mnts(mnts);
 		ffch_dr_hr(dr_hr);
 		ffch(h);
+	}
+	
+	public static int n_ntr
+	(String prm) {
+		return Integer.parseInt(prm);
+	}
+	
+	public static float n_dcml
+	(String prm) {
+		return Float.parseFloat(prm);
 	}
 	
 	public static void ffch_dr_hr
@@ -97,7 +107,7 @@ public class algo {
 		h[1] = (int) hd2;
 		float hd3 = (hd2 - h[1]) * 60.F;
 		h[2] = Math.round(hd3);
-		return vrfr(h); //fh sign. hr. décimale
+		return vrfr(h);
 	}
 }
 
