@@ -15,16 +15,19 @@ public class algo {
 		ffch(h);
 	}
 	
+	// [convertit] en entier
 	public static int n_ntr
 	(String prm) {
 		return Integer.parseInt(prm);
 	}
 	
+	// [convertit] en décimal
 	public static float n_dcml
 	(String prm) {
 		return Float.parseFloat(prm);
 	}
 	
+	// [afficher 1] heure romaine
 	public static void ffch_dr_hr
 	(int[] hr) {
 		System.out.println();
@@ -33,6 +36,7 @@ public class algo {
 		+ hr[1] + "m" + hr[2] + "s.");
 	}
 	
+	// [afficher des ] heures
 	public static String hr
 	(int[][][] h, int i, int prt) {
 		return h[i][prt][0] + "h" 
@@ -40,6 +44,7 @@ public class algo {
 		h[i][prt][2] + "s";
 	}
 	
+	// [afficher des ] phrases
 	public static String phrs
 	(int i, int[][][] h, int prt) {
 		return " de la " + i + 
@@ -47,6 +52,7 @@ public class algo {
 		"heure: " + hr(h, i - 1, prt);
 	}
 	
+	// afficher
 	public static void ffch
 	(int[][][] h) {
 		System.out.println();
@@ -77,6 +83,7 @@ public class algo {
 		return h;
 	}
 	
+	// mettre-à-jour
 	public static int[] mttr_jr
 	(int[] h, int i) {
 		h[i + 1] = 0;
@@ -84,6 +91,7 @@ public class algo {
 		return h;
 	}
 	
+	// verifier
 	public static int[] vrfr
 	(int[] h) {
 		if(h[2] == 60) {
