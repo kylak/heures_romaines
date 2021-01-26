@@ -1,8 +1,5 @@
 
 public class algo {
-
-	// args[0]: lever du soleil (en min.)
-	// args[1]: durée du jour (en min.)
 	
 	// [afficher une] heure
 	public static String hr
@@ -106,6 +103,8 @@ public class algo {
 		return Integer.parseInt(prm);
 	}
 
+	// args[0]: lever du soleil (en min.)
+	// args[1]: durée du jour (en min.)
 	public static void main 
 	(String[] args) {
 		int dr = n_ntr(args[1]);
@@ -117,6 +116,3 @@ public class algo {
 		ffch(h);
 	}
 }
-
-
-
