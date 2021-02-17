@@ -1,8 +1,14 @@
 public class algo {
+
+	//(ι): durée d'une heure temp.
+	public static int[]dr_hr;
+	
+	// horaires des heures temp.
+	public static int[][][]h;
 	
 	// [afficher une] heure
 	public static String hr
-	(int[][][] h, int i, int prt) {
+	(int i, int prt) {
 		return h[i][prt][0] + "h" 
 		+ h[i][prt][1] + "m" + 
 		h[i][prt][2] + "s";
@@ -10,30 +16,36 @@ public class algo {
 	
 	// [afficher la] phrase
 	public static String phrs
-	(int i, int[][][] h, int prt) {
+	(int i, int prt) {
 		return " de la " + i + 
 		(i == 1 ? "ère " : "ème ") + 
-		"heure: " + hr(h, i - 1, prt);
+		"heure: " + hr(i - 1, prt);
 	}
 	
-	// afficher
-	public static void ffch
-	(int[][][] h) {
+	// afficher [les] horaires
+	public static void ffch_hrrs () {
 		System.out.println();
 		for(int i = 1; i < 13; i++) {
 			System.out.println("Début" + 
-			phrs(i, h, 0) + "\nMoitié" + 
-			phrs(i, h, 1) + "\n");
+			phrs(i, 0) + "\nMoitié" + 
+			phrs(i, 1) + "\n");
 		}
 	}
 	
-	// [afficher 1] heure romaine
+	// afficher (ι)
 	public static void ffch_dr_hr
-	(int[] hr) {
+	() {
 		System.out.println();
 		System.out.println("1 heure "
-		+ "temporaire: " + hr[0] + "h"
-		+ hr[1] + "m" + hr[2] + "s.");
+		+ "temporaire: " + dr_hr[0]
+		+ "h" + dr_hr[1] + "m" + 
+		dr_hr[2] + "s.");
+	}
+	
+	// afficher
+	public static void ffch () {
+		ffch_dr_hr();
+		ffch_hrrs();
 	}
 	
 	// mettre-à-jour
@@ -55,9 +67,10 @@ public class algo {
 		return h;
 	}
 	
-	// découpe des minutes 
-	// [0] : hr, [1] : mnt, 
-	// [2] : scnd
+	/* découpe des minutes 
+	   [0] : hr, [1] : mnt, 
+	   [2] : scnd
+	*/
 	public static int[] dcp_mnts
 	(float mnts) {
 		float hd = mnts / 60.F;
@@ -75,9 +88,10 @@ public class algo {
 		return new int[12][2][3];
 	}
 	
-	// [x] : id_hr, [x][y] : y : 
-	// 0 : dbt, 1 : mt
-	// nhr : nouvelle heure
+	/* [x] : id_hr, [x][y] : y : 
+	   0 : dbt, 1 : mt
+	   nhr : nouvelle heure
+	*/
 	public static int[][][] id_hr
 	(float mnts, float nhr_mnt) {
 		int[][][] h = crrH();
@@ -102,16 +116,16 @@ public class algo {
 		return Integer.parseInt(prm);
 	}
 
-	// args[0]: lever du soleil (en min.)
-	// args[1]: durée du jour (en min.)
+	/* args[0]: lever du soleil (en min.)
+	   args[1]: durée du jour (en min.) 
+	*/
 	public static void main 
 	(String[] args) {
 		int dr = n_ntr(args[1]);
 		float lv = n_dcml(args[0]);
 		float mnts =  dr / 12.F;
-		int[][][] h = id_hr(mnts, lv);
-		int[]dr_hr = dcp_mnts(mnts);
-		ffch_dr_hr(dr_hr);
-		ffch(h);
+		h = id_hr(mnts, lv);
+		dr_hr = dcp_mnts(mnts);
+		ffch();
 	}
 }
