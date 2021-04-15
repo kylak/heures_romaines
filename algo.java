@@ -104,16 +104,16 @@ public class algo {
 		return h;
 	}
 	
-	// [convertit] en décimal
-	public static float n_dcml
-	(String prm) {
-		return Float.parseFloat(prm);
-	}
-	
 	// [convertit] en entier
 	public static int n_ntr
 	(String prm) {
 		return Integer.parseInt(prm);
+	}
+	
+	// [convertit] en décimal
+	public static float n_dcml
+	(String prm) {
+		return Float.parseFloat(prm);
 	}
 
 	/* args[0]: lever du soleil (en min.)
@@ -121,8 +121,8 @@ public class algo {
 	*/
 	public static void main 
 	(String[] args) {
-		int dr = n_ntr(args[1]);
 		float lv = n_dcml(args[0]);
+		int dr = n_ntr(args[1]);
 		float mnts =  dr / 12.F;
 		h = id_hr(mnts, lv);
 		dr_hr = dcp_mnts(mnts);
