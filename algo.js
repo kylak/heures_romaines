@@ -6,36 +6,58 @@
 	// horaires des heures temp.
 	var h;
 	
+	function beautify() {
+		text = text.replaceAll(
+		" 0h", " ");
+		text = text.replaceAll(
+		"m0s", "");
+		text = text.replaceAll(
+		" <span>0h", " <span>");
+		text = text.replaceAll(
+		"m0<\/span>s", "</span>");
+	}
+	
+	function tags (i, prt) {
+		let tag1 = (prt == 0 && 
+		(i == 3 || i == 6 || i == 9) ?
+		 "<span>" : "");
+		 let tag2 = (tag1 == "<span>"
+		 ? "</span>" : "");
+		 return [tag1, tag2];
+	}
+	
 	// [afficher une] heure
-	function hr (i, prt) {
+	function hr (i, prt, t) {
 		return h[i][prt][0] + "h" 
-		+ h[i][prt][1] + "m" + 
-		h[i][prt][2] + "s";
+		+ h[i][prt][1] + t + "m"
+		+ h[i][prt][2] + "s.";
 	}
 	
 	// [afficher la] phrase
 	function phrs (i, prt) {
+		let t = tags(i, prt);
 		return " de la " + i + 
 		(i == 1 ? "ère " : "ème ") + 
-		"heure: " + hr(i - 1, prt);
+		"heure: " + t[0] + 
+		hr(i - 1, prt, t[1]);
 	}
 	
 	// afficher [les] horaires
 	function ffch_hrrs () {
-		text += "\n";
+		text += "<br><br>";
 		for(let i = 1; i < 13; i++) {
 			text += "Début" + 
-			phrs(i, 0) + "\nMoitié" + 
-			phrs(i, 1) + "\n";
+			phrs(i, 0) + "<br>Moitié" + 
+			phrs(i, 1) + "<br><br>";
 		}
 	}
 	
 	// afficher (ι)
 	function ffch_dr_hr () {
-		text += "\n";
 		text += "1 heure "
-		+ "temporaire: " + dr_hr[0]
-		+ "h" + dr_hr[1] + "m" + 
+		+ "temporaire: " + "<span>"
+		+ dr_hr[0] + "h" + dr_hr[1] 
+		+ "m" + "</span>" + 
 		dr_hr[2] + "s.";
 	}
 	
@@ -118,5 +140,5 @@
 		let mnts =  dr / 12.0;
 		h = id_hr(mnts, lv);
 		dr_hr = dcp_mnts(mnts);
-		ffch();
+		ffch(); beautify();
 	}

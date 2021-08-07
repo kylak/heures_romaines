@@ -1,0 +1,11 @@
+p {
+	margin : auto;	
+	margin-top: 60px;
+	text-align: center;
+	font-size: 1.3em;
+}
+
+p span {
+	color : red;
+	font-weight: bold;
+}
