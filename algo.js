@@ -109,12 +109,12 @@
 		return parseFloat(prm);
 	}
 
-	/* args[0]: lever du soleil (en min.)
-	   args[1]: durée du jour (en min.) 
+	/* lev: lever du soleil (en min.)
+	   dur: durée du jour (en min.) 
 	*/
-	function main () {
-		let lv = n_dcml(500);
-		let dr = n_ntr(600);
+	function main (lev, dur) {
+		let lv = n_dcml(lev);
+		let dr = n_ntr(dur);
 		let mnts =  dr / 12.0;
 		h = id_hr(mnts, lv);
 		dr_hr = dcp_mnts(mnts);
