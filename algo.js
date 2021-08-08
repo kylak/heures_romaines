@@ -54,7 +54,7 @@
 	
 	// afficher (ι)
 	function ffch_dr_hr () {
-		text += "1 heure "
+		text += "<br>1 heure "
 		+ "temporaire: " + "<span>"
 		+ dr_hr[0] + "h" + dr_hr[1] 
 		+ "m" + "</span>" + 

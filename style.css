@@ -1,6 +1,9 @@
+body {
+	padding-top: 10px;
+}
+
 p {
 	margin : auto;	
-	margin-top: 60px;
 	text-align: center;
 	font-size: 1.1em;
 }
