@@ -8,7 +8,12 @@ p {
 	font-size: 1.1em;
 }
 
-p span {
+p a {
+	text-decoration : none;
+	color: black;
+}
+
+#heures span {
 	color : red;
 	font-weight: bold;
 }
