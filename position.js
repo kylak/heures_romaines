@@ -1,23 +1,18 @@
 function geoFindMe() {
 
   const status = document.querySelector('#status');
-  const lat = document.querySelector('#lat');
-  const lon = document.querySelector('#lon');
+  const plan = document.querySelector('#plan');
 
-  lat.href = '';
-  lat.textContent = '';
-  lon.href = '';
-  lon.textContent = '';
+  plan.href = '';
+  plan.textContent = '';
 
   function success(position) {
     const latitude  = position.coords.latitude;
     const longitude = position.coords.longitude;
 
     status.textContent = '';
-    lat.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-    lon.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-    lat.textContent = `Latitude: ${latitude} °`;
-    lon.textContent = `Longitude: ${longitude} °`;
+    plan.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+    plan.innerHTML = `<p>Latitude: ${latitude} °<br>Longitude: ${longitude} °`;
   }
 
   function error() {
