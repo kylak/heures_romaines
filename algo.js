@@ -9,7 +9,7 @@
 	// open html tag details
 	var det = "<details>"
 	det += "<summary>"
-	det += "details</summary>";
+	det += "détails</summary>";
 	
 	function beautify() {
 		text = text.replaceAll(
