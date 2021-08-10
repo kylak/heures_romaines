@@ -2,7 +2,7 @@ body {
 	padding-top: 10px;
 }
 
-p {
+p, div {
 	margin : auto;	
 	text-align: center;
 }
@@ -12,7 +12,16 @@ a {
 	color: black;
 }
 
-#heures span {
+div span {
 	color : red;
 	font-weight: bold;
+}
+
+summary {
+  outline: none;
+  cursor: pointer;
+}
+
+summary:focus {
+outline:0;
 }

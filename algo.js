@@ -6,6 +6,11 @@
 	// horaires des heures temp.
 	var h;
 	
+	// open html tag details
+	var det = "<details>"
+	det += "<summary>"
+	det += "details</summary>";
+	
 	function beautify() {
 		text = text.replaceAll(
 		" 0h", " ");
@@ -17,7 +22,8 @@
 		"m0<\/span>s", "</span>");
 	}
 	
-	function tags (i, prt) {
+	// [create] span [html] tags
+	function spntgs (i, prt) {
 		let tag1 = (prt == 0 && 
 		(i == 3 || i == 6 || i == 9) ?
 		 "<span>" : "");
@@ -35,11 +41,24 @@
 	
 	// [afficher la] phrase
 	function phrs (i, prt) {
-		let t = tags(i, prt);
+		let t = spntgs(i, prt);
 		return " de la " + i + 
 		(i == 1 ? "ère " : "ème ") + 
 		"heure: " + t[0] + 
 		hr(i - 1, prt, t[1]);
+	}
+	
+	// open [html tag] details
+	function odtls (i) {
+		return i == 1 || i == 3 || 
+		i == 6 || i == 9 ? det : "";
+	}
+	
+	// close [html tag] details
+	function cdtls (i) {
+		return i == 2 || i == 5 ||
+		i == 8 || i ==  12 ?
+		"</details>" : "<br>";
 	}
 	
 	// afficher [les] horaires
@@ -47,8 +66,10 @@
 		text += "<br><br>";
 		for(let i = 1; i < 13; i++) {
 			text += "Début" + 
-			phrs(i, 0) + "<br>Moitié" + 
-			phrs(i, 1) + "<br><br>";
+			phrs(i, 0) + "<br>" + 
+			odtls(i) + "Moitié" +
+			phrs(i, 1) + cdtls(i)
+			+ "<br>";
 		}
 	}
 	
