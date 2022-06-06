@@ -1,3 +1,6 @@
+# Présentation
+Ce programme a pour objectif de donner les heures temporaire d'un jour (1ère heure, 2ème heure, etc.).
+
 # Pour utiliser l'algorithme, deux manières.
 
 0. Prendre connaissance de la durée du jour en minutes ainsi que l'heure en minutes à laquelle se lève le soleil.  
