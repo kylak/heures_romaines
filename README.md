@@ -4,7 +4,7 @@
 Pour cela, le site proxiti (exemple: https://www.proxiti.info/horaires_soleil.php?o=75056) peut aider.
 
 ## Première manière de procéder :  
-1. Copier le contenu du fichier algo.java (https://github.com/kylak/heures_romaines/blob/9633c615ce4b4ca16d21d71536d8398c87e395ba/algo.java) et le coller dans la zone de texte du haut du site https://www.jdoodle.com/online-java-compiler/ (avant de coller : supprimer ce qu'il y aurait dans cette zone de texte).<br>
+1. Copier le contenu du fichier algo.java (https://github.com/kylak/heures_romaines/blob/9633c615ce4b4ca16d21d71536d8398c87e395ba/algo.java) et le coller dans la zone de texte du haut du site https://www.jdoodle.com/online-java-compiler/ (avant de coller : supprimer ce que peut-être il y aurait dans cette zone de texte).<br>
 2. Ensuite, entrer dans la zone de texte nommée "CommandLine Arguments" l'heure en minutes à laquelle se lève le soleil, un espace, et puis la durée du jour en minutes.<br>
 3. Puis appuyer sur le bouton "Execute", et le résultat devrait s'afficher dans la zone de texte nommée "Stdin Inputs".
 
