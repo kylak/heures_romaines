@@ -3,7 +3,7 @@ Ce programme a pour objectif de donner les heures temporaires d'un jour (1ère h
 
 # Pour utiliser l'algorithme, deux manières.
 
-0. Prendre connaissance de la durée du jour en minutes ainsi que l'heure en minutes à laquelle se lève le soleil.  
+0. Prendre connaissance de l'heure en minutes à laquelle se lève le soleil ainsi que de la durée du jour en minutes.  
 Pour cela, le site proxiti (exemple: https://www.proxiti.info/horaires_soleil.php?o=75056) peut aider.
 
 ## Première manière de procéder :  
