@@ -1,5 +1,5 @@
 # Présentation
-Ce programme a pour objectif de donner les heures temporaire d'un jour (1ère heure, 2ème heure, etc.).
+Ce programme a pour objectif de donner les heures temporaires d'un jour (1ère heure, 2ème heure, etc.).
 
 # Pour utiliser l'algorithme, deux manières.
 
